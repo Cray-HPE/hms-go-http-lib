@@ -1,6 +1,7 @@
 @Library('dst-shared@master') _
 
 dockerBuildPipeline {
+        githubPushRepo = "Cray-HPE/hms-go-http-lib"
         repository = "cray"
         imagePrefix = "hms"
         app = "hms-go-http-lib"
