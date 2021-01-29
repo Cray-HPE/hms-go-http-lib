@@ -1,5 +1,24 @@
-// Copyright 2020 Hewlett Packard Enterprise Development LP
-
+// MIT License
+//
+// (C) Copyright [2020-2021] Hewlett Packard Enterprise Development LP
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, including without limitation
+// the rights to use, copy, modify, merge, publish, distribute, sublicense,
+// and/or sell copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+// THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+// OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+// ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
 
 package hmshttp
 
@@ -181,13 +200,13 @@ func (request *HTTPRequest) DoHTTPAction() (payloadBytes []byte, responseStatusC
 	}
 
 	//If the caller set up a TLS-aware client pair, we will try the secure one
-	//first, and if the transaction fails, the insecure.  Since retryablehttp 
-	//default retry count is 4, and since the backoff goes to a max of 30 
-	//seconds, retrying will be very expensive.  Thus, the caller needs to 
-	//take this into account when using secure/insecure fallback, and should 
+	//first, and if the transaction fails, the insecure.  Since retryablehttp
+	//default retry count is 4, and since the backoff goes to a max of 30
+	//seconds, retrying will be very expensive.  Thus, the caller needs to
+	//take this into account when using secure/insecure fallback, and should
 	//either reduce the retry max count and/or the retry max time.
 	//
-	//At this point we will look at what the caller set the retry params to 
+	//At this point we will look at what the caller set the retry params to
 	//and set the retryablehttp client accordingly.
 
 	if (request.MaxRetryCount > 0) {
@@ -201,7 +220,7 @@ func (request *HTTPRequest) DoHTTPAction() (payloadBytes []byte, responseStatusC
 	//not use the TLSClientPair.  If that is the case the retryablehttp client
 	//will use all defaults and will be cert-insecure.  If a TLSClientPair
 	//is used, we will first try the secure client, and if that is not present
-	//or fails, use the insecure one and log the incident.  Note that the 
+	//or fails, use the insecure one and log the incident.  Note that the
 	//caller can instantiate a TLSClientPair with no CA bundle data and it
 	//will create only an insecure client.  This insures backward compatibility
 	//all the way around.
