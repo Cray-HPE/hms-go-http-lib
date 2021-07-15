@@ -12,6 +12,3 @@ unittest:
 coverage:
 	./runCoverage.sh
 
-buildbase:
-	docker build -t cray/hms-go-http-lib-build-base -f Dockerfile.build-base .
-
