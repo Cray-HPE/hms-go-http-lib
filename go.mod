@@ -3,6 +3,6 @@ module stash.us.cray.com/HMS/hms-go-http-lib
 go 1.16
 
 require (
-	github.com/hashicorp/go-retryablehttp v0.6.0
-	stash.us.cray.com/HMS/hms-certs v1.2.0
+	github.com/Cray-HPE/hms-certs v1.3.2
+	github.com/hashicorp/go-retryablehttp v0.7.0
 )
