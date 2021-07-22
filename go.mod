@@ -1,4 +1,4 @@
-module stash.us.cray.com/HMS/hms-go-http-lib
+module github.com/Cray-HPE/hms-go-http-lib
 
 go 1.16
 
