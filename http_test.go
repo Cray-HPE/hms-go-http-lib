@@ -249,7 +249,7 @@ func TestCAHttp2(t *testing.T) {
 	//Try URL which won't work.
 
 	t.Log("Bad URL, should fail.")
-	req.FullURL = "http://blah.zay.com"
+	req.FullURL = "http://aaaaaaaaaaaaaaabbbbbbbbbbbbbbbb.com"
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	req.Context = ctx
 	defer cancel()
