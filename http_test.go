@@ -1,6 +1,6 @@
 // MIT License
 //
-// (C) Copyright [2020-2021,2024] Hewlett Packard Enterprise Development LP
+// (C) Copyright [2020-2021,2024-2025] Hewlett Packard Enterprise Development LP
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -198,6 +198,10 @@ func TestCAHttp2(t *testing.T) {
 	if err != nil {
 		t.Errorf("ERROR creating CA HTTP request: %v", err)
 	}
+
+	// test_cabundle.crt is a self-signed cert, so we need to skip verify.
+	req.TLSClientPair.SecureClient.HTTPClient.Transport.(*http.Transport).TLSClientConfig.InsecureSkipVerify = true
+
 	req.Payload = []byte(jpayload)
 
 	rstr := req.String()
