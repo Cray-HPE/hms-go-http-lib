@@ -5,8 +5,8 @@ go 1.24.0
 toolchain go1.24.1
 
 require (
-	github.com/Cray-HPE/hms-base/v2 v2.2.1-0.20250414152022-3ab999198b9c
-	github.com/Cray-HPE/hms-certs v1.6.1-0.20250414161713-14b0a66d2c7f
+	github.com/Cray-HPE/hms-base/v2 v2.3.0
+	github.com/Cray-HPE/hms-certs v1.7.0
 	github.com/hashicorp/go-retryablehttp v0.7.7
 )
 
